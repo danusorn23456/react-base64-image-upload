@@ -1,0 +1,132 @@
+.ReactEzyImageUploadContainer *{
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.ReactEzyImageUploadContainer.isDisabled,.ReactEzyImageUploadContainer.isDisabled *{
+    pointer-events: none !important;
+}
+
+.ReactEzyImageUploadContainer{
+    position: relative;
+    padding: 2px;
+    border-radius: 4px;
+    border:1px dashed lightgrey;
+    width:100%;
+    display: grid;
+}
+
+.ReactEzyImageUploadContainer.isError,.ReactEzyImageUploadContainer.isError *{
+    border-color: red !important;
+    color: red !important;
+}
+
+.ReactEzyImageUploadImageBox{
+    pointer-events: auto;
+    position: relative;
+    padding:4px;
+    height:min-content;
+}
+
+.ReactEzyImageUploadImageBox-Media{
+    border-radius: 4px;
+    pointer-events: auto;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.ReactEzyImageUploadImageBox-Media.rounded{
+    border-radius: 4000px !important;
+}
+
+.ReactEzyImageUploadImageBox-Plus{
+    pointer-events: none;
+    color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    transform: translate(-50%,-50%);
+}
+
+.ReactEzyImageUploadImageBox-Label{
+    pointer-events: none;
+    user-select: none;
+    color:grey;
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+    left:50%;
+}
+
+.ReactEzyImageUploadImageBox-Label.isUploaded{
+    transition:opacity 100ms linear;
+    margin: 0;
+    top:unset;
+    width: 100%;
+    bottom:0;
+    left:0%;
+    transform: translateX(0) translateY(0);
+    padding: 4px;
+    background-color: white;
+    opacity: 0;
+}
+
+.ReactEzyImageUploadImageBox:hover .ReactEzyImageUploadImageBox-Label.isUploaded{
+    opacity: 0.8;
+}
+
+.ReactEzyImageUploadImageBox-Media:not(.hasMedia){
+    border: 1px dashed lightgray;
+}
+
+.ReactEzyImageUploadImageBox:not(:last-child){
+    border-right: 0;
+}
+
+.ReactEzyImageUploadImageBox-Button{
+    transition:opacity 100ms linear;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    color: lightslategrey;
+    border:1px solid lightgray;
+    top: 0;
+    right: 0;
+    border: none;
+    border-radius: 100px;
+    background: white;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.ReactEzyImageUploadImageBox:hover .ReactEzyImageUploadImageBox-Button{
+    opacity: 1;
+}
+
+.ReactEzyImageUploadImageBox-Bin{
+    width: 100%;
+    height: 100%;
+}
+
+.ReactEzyImageUploadCaption{
+    width: 100%;
+    top: 100%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ReactEzyImageUploadCaption span{
+    opacity: 0.5;
+    padding: 4px 0;
+    font-size: 0.8rem;
+}
